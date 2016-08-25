@@ -1,0 +1,55 @@
+---
+layout: page
+title: Категории
+permalink: /categories/
+---
+{% assign items = site.categories %}
+{% assign default = nil %}
+<ul>
+	{% for item in items %}
+	{% unless item[0] == default %}
+	<li><a href="#{{ item[0]| downcase }}">{{ item[0] | downcase }} ({{ item[1]| size }})</a></li>
+	{% endunless %}
+	{% endfor %}
+
+	{% if default %}
+	{% for item in items %}
+	{% if item[0] == default %}
+	<li><a href="#{{ item[0]| downcase }}">{{ item[0] | downcase }} ({{ item[1]| size }})</a></li>
+	{% endif %}
+	{% endfor %}
+	{% endif%}
+</ul>
+
+
+<ul>
+	{% for item in items %}
+	{% unless item[0] == default %}
+	<li>
+		<h3 id="{{ item[0]| downcase }}">{{ item[0]| downcase }} ({{ item[1]| size}})</h3>
+		<ul>  
+			{% for post in item[1] %}
+			<li><a href="{{ post.url }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%d %b %Y" }}</time></li>
+			{% endfor %}
+		</ul>
+	</li>
+	{% endunless %}
+	{% endfor %}
+
+	{% if default %}
+	{% for item in items %}
+	{% if item[0] == default %}
+	<li>
+		<h3 id="{{ item[0]| downcase }}">{{ item[0]| downcase }} ({{ item[1]| size}})</h3>
+		<ul>  
+			{% for post in item[1] %}
+			<li><a href="{{ post.url }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%d %b %Y" }}</time></li>
+			{% endfor %}
+		</ul>
+	</li>
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+</ul>
+{% assign items = nil %}
+{% assign default = nil %}

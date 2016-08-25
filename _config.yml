@@ -1,0 +1,84 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: FRWHate's blog
+tagline: 
+description: > # this means to ignore newlines until "baseurl:"
+  Персональный блог содержащий заметки об вёрстке, программировании,
+  операционной системе Linux и её утилитах, а также обо всем другом
+baseurl: "" # the subpath of your site, e.g. /blog
+#url: "" # the base hostname & protocol for your site
+
+author:
+  name: Pavel Bushmakin
+  phone:
+  email:
+    domain: gmail.com
+    login:       FRWHate
+  github:        FRWHate
+  bitbucket:     FRWHate
+  gitlab:        FRWHate
+  telegram:      FRWHate
+  twitter:       FRWHate
+  facebook:      FRWHate
+  vk:            FRWHate
+  instagram:     FRWHate
+  linkedin:
+  stackoverflow: 
+  reddit:
+
+comments:
+  provider: disqus
+  disqus: FRWHate
+  facebook:
+  vk:
+
+analitics:
+  provider:
+  google:
+
+sharing:
+  facebook:
+  twitter:
+  vk:
+
+# Build settings
+markdown: kramdown
+permalink: post/:year/:month/:day/:title/
+permalink_page: /:path/:basename/
+sass:
+  style: :compressed #:compressed or :expanded
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      tags: untagged
+#      categories: #don't work. A value don't redefine in post's frontmatter
+
+
+
+gems:
+   - jekyll-paginate
+   - jekyll-mentions
+   - jemoji
+   - jekyll-redirect-from
+   - jekyll-sitemap
+   - jekyll-feed # {% feed_meta %} between <head> and </head>
+#   - jekyll-seo-tag # {% seo %} before </head>
+
+paginate: 10
+jekyll-mentions:
+  base_url: http://twitter.com/
+
+
+exclude:
+  - LICENSE
+  - README.md
+  - CNAME

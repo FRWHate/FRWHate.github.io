@@ -1,0 +1,5 @@
+{% if site.comments.provider %}
+<div class="comments">
+	{% include comments-{{site.comments.provider}}.html %}
+</div>
+{% endif %}

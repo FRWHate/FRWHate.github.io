@@ -1,0 +1,14 @@
+---
+layout: page
+title: Архив
+---
+
+<div class="home">
+	<ul class="post-list">
+		{% for post in site.posts %}
+		<li>
+			{{ post.date | date: "%b %-d, %Y" }} >>	<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
